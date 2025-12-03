@@ -1,5 +1,5 @@
-import ply.yacc as yacc
-from scanner import tokens
+import ply.yacc as yacc  # PLY Yacc: genera el parser LR
+from scanner import tokens  # Tokens definidos por el lexer
 from cubo_semantico import get_tipo_resultado, T_ENTERO, T_FLOTANTE, T_BOOL, T_ERROR
 from directorio_funciones import (
     inicializar_dirfunc, agregar_variable, buscar_variable, agregar_funcion,
@@ -21,7 +21,7 @@ def p_programa(p):
     '''
     programa : PROGRAMA ID SEMICOLON np_programa_start vars_opc funcs_opc INICIO np_programa_label cuerpo FIN
     '''
-    # PUNTO NEUROLOGICO 1: Inicializar el directorio al reconocer el programa
+    # Inicializar el directorio al reconocer el programa
     from directorio_funciones import dir_func
     if not dir_func:
         inicializar_dirfunc(p[2])  # p[2] es el ID del programa
@@ -356,7 +356,7 @@ def p_ciclo(p):
     '''
     print("Ciclo MIENTRAS reconocido.")
 
-# --- PUNTOS NEUROLOGICOS PARA WHILE (MIENTRAS) ---
+# PUNTOS NEUROLOGICOS PARA WHILE (MIENTRAS) 
 
 def p_np_while_1(p):
     '''np_while_1 : empty'''
@@ -777,4 +777,5 @@ def p_error(p):
         print("Error de sintaxis al final del archivo.")
 
 # Construir el parser
+# Construir el parser a partir de las reglas p_*
 parser = yacc.yacc()

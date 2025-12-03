@@ -1,6 +1,7 @@
-import ply.lex as lex
+import ply.lex as lex  # PLY Lex: generador de analizadores léxicos
 
 # Palabras Reservadas del lenguaje Patito
+# Mapea el texto del código fuente a tipos de token de palabra reservada
 palabras_reservadas = {
     'programa': 'PROGRAMA',
     'inicio': 'INICIO',
@@ -19,6 +20,7 @@ palabras_reservadas = {
 }
 
 # Lista de tokens
+# Incluye identificadores, constantes, operadores, signos de agrupación y comparadores
 tokens = [
     'ID', 'CTE_ENT', 'CTE_FLOT', 'LETRERO',
     'PLUS', 'MINUS', 'TIMES', 'DIVIDE', 'MOD',
@@ -29,6 +31,7 @@ tokens = [
 ] + list(palabras_reservadas.values())
 
 # Expresiones regulares para tokens simples
+# Cada variable t_X define el patrón del token X
 t_PLUS      = r'\+'
 t_MINUS     = r'-'
 t_TIMES     = r'\*'
@@ -54,12 +57,12 @@ t_NE        = r'!='
 t_EQ        = r'=='
 t_LE        = r'<='
 t_GE        = r'>='
-t_ignore    = ' \t'
+t_ignore    = ' \t'  # Ignora espacios y tabulaciones
 
 # Comentarios: línea y bloque
 def t_comment_single(t):
     r'//.*'
-    pass
+    pass  # Ignorar comentarios de una sola línea
 
 def t_comment_block(t):
     r'/\*([^*]|\*+[^/])*\*/'
@@ -70,31 +73,31 @@ def t_comment_block(t):
 # Reglas para tokens complejos
 def t_ID(t):
     r'[a-zA-Z][a-zA-Z_0-9]*'
-    t.type = palabras_reservadas.get(t.value, 'ID') # Revisa si es palabra reservada
+    t.type = palabras_reservadas.get(t.value, 'ID')  # Si coincide con reservada, cambia su tipo
     return t
 
 def t_CTE_FLOT(t):
     r'\d+\.\d+'
-    t.value = float(t.value)
+    t.value = float(t.value)  # Convierte literal flotante
     return t
 
 def t_CTE_ENT(t):
     r'\d+'
-    t.value = int(t.value)
+    t.value = int(t.value)  # Convierte literal entero
     return t
     
 def t_LETRERO(t):
     r'\"([^\\\"]|\\.)*\"'
-    t.value = t.value[1:-1] # Quita las comillas
+    t.value = t.value[1:-1]  # Quita las comillas y conserva contenido
     return t
 
 def t_newline(t):
     r'\n+'
-    t.lexer.lineno += len(t.value)
+    t.lexer.lineno += len(t.value)  # Actualiza el número de línea
 
 def t_error(t):
     print(f"Caracter ilegal '{t.value[0]}' en linea {t.lexer.lineno}")
-    t.lexer.skip(1)
+    t.lexer.skip(1)  # Avanza un carácter para continuar lexing
 
-# Construir el lexer
+# Construir el lexer (instancia de PLY Lex a partir de las reglas definidas)
 lexer = lex.lex()

@@ -11,13 +11,13 @@ class MemoriaVirtual:
         self.glob_float_min = 2000
         self.glob_float_max = 2999
         
-        # Locales (se reinician por función)
+        # Locales 
         self.loc_int_min = 3000
         self.loc_int_max = 3999
         self.loc_float_min = 4000
         self.loc_float_max = 4999
         
-        # Temporales (se reinician por función)
+        # Temporales 
         self.temp_int_min = 5000
         self.temp_int_max = 5999
         self.temp_float_min = 6000
@@ -33,7 +33,7 @@ class MemoriaVirtual:
         self.cte_string_min = 10000
         self.cte_string_max = 10999
 
-        # --- CONTADORES ACTUALES ---
+        # CONTADORES ACTUALES 
         self.reset_contadores_locales()
         self.reset_contadores_globales()
         self.reset_contadores_constantes()

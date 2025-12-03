@@ -1,22 +1,5 @@
 from typing import List, Tuple, Dict, Any
 
-# Opcodes esperados en los cuádruplos
-# ('+', op1, op2, res)
-# ('-', op1, op2, res)
-# ('*', op1, op2, res)
-# ('/', op1, op2, res)
-# ('>', op1, op2, res)
-# ('<', op1, op2, res)
-# ('!=', op1, op2, res)
-# ('==', op1, op2, res)
-# ('=', op1, None, res)
-# ('IMPRIME', None, None, res)
-# ('GOTOF', cond, None, dest)
-# ('GOTO', None, None, dest)
-# ('ENDFUNC', None, None, None)
-# ('END', None, None, None)
-# Opcodes de funciones (se ignoran por ahora): 'ERA', 'PARAMETER', 'GOSUB'
-
 class VirtualMachine:
     def __init__(self, quads: List[Tuple[Any, Any, Any, Any]], tabla_constantes: Dict[Any, int]):
         self.quads = quads
