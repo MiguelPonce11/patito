@@ -1,0 +1,19 @@
+programa asignacioon;
+vars a, b, res: entero;
+inicio {
+    a = 5 * 10;
+    b = - 30 - 30;
+    escribe("--- TEST SUMATORIA ---");
+    escribe("A: ", a);
+    escribe("B: ", b);
+    a += 5;
+    escribe("A: ", a);
+    b -= -12;
+    escribe("B: ", b);
+    a *= 2;
+    escribe("A: ", a);
+    b /= 3;
+    escribe("B: ", b);
+    
+    escribe("A - A + B: ", a - a + b);
+} fin

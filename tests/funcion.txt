@@ -1,0 +1,10 @@
+programa funcion;
+vars res: entero;
+nula suma(a: entero, b: entero) {
+    res = a + b;
+};   
+inicio {
+    escribe("--- TEST FUNCION ---");
+    suma(5, 3);
+    escribe("Resultado:", res);
+} fin

@@ -1,0 +1,22 @@
+programa expresiones;
+vars a, b, res: entero;
+inicio {
+    escribe(5 + 10);
+    escribe(5.1 + 10.0);
+    escribe(5.0 + 10);
+    escribe(5 + 10.0);
+    escribe(5 - 10);
+    escribe(5 * 10);
+    escribe(9 / 2);
+    escribe(9 / 2.0);
+    escribe(10 % 5);
+    escribe(10 % 3);
+    escribe(5 > 10);
+    escribe(5 < 10);
+    escribe(5 == 10);
+    escribe(5 != 10);
+    escribe(5 <= 10);
+    escribe(5 >= 10);
+    escribe(5 <= 5);
+    escribe(5 >= 5);
+} fin

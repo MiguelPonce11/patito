@@ -1,0 +1,23 @@
+programa calculo_fibonacci;
+vars
+    num : entero;
+    res : entero;
+
+entero fib(n : entero) {
+    si (n == 0) {
+        return (0);
+    };
+    si (n == 1) {
+        return (1);
+    };
+    return ( fib(n - 1) + fib(n - 2) );
+};
+
+inicio
+{
+    escribe("--- TEST FIBONACCI ---");
+    num = 6;
+    res = fib(num);
+    escribe("fib(6) = ", res);
+}
+fin

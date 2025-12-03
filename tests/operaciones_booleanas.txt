@@ -1,0 +1,25 @@
+programa operaciones_booleanas;
+vars i, j, k: entero;
+inicio {
+    
+    i = 10;
+    j = 20;
+    k = 10;
+
+    si(i == 10 && j == 10){
+        escribe("i y j son iguales a 10");
+    };
+
+    si(i == 10 || k == 10){
+        escribe("i o k son iguales a 10");
+    };
+
+    si(!(k == 10)){
+        escribe("k no es igual a 10");
+    };
+
+    si(i == 30 ||  k == 10 && j == 20){
+        escribe("k es igual a 10 y j es igual a 20 o i es igual a 30");
+    };
+
+} fin

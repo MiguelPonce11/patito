@@ -1,0 +1,50 @@
+programa condicionales_anidados;
+vars temperatura, hora: entero; humedad, viento, calidad_del_aire: flotante;
+inicio {
+    
+    hora = 10;
+    humedad = 0.2;
+    temperatura = 15;
+    viento = 0.2;
+    calidad_del_aire = 0.1;
+
+    si(hora < 12){ /* dia */
+        escribe("Es de dia");
+        si(humedad < 0.3){
+            escribe("Es poco probable que llueva");
+            si(temperatura < 8){
+                escribe("Está muy frío");
+            } sino_si(temperatura < 15){
+                escribe("Está fresco");
+            } sino_si(temperatura < 25){
+                escribe("Hace algo de calor");
+                si(viento < 0.3){
+                    escribe("No hace mucho viento");
+                    si(calidad_del_aire < 0.3){
+                        escribe("La calidad del aire es mala");
+                    } sino_si(calidad_del_aire < 0.7){
+                        escribe("La calidad del aire es regular");
+                    } sino {
+                        escribe("La calidad del aire es buena");
+                    };
+                } sino_si(viento < 0.7){
+                    escribe("Nivel de viento medio");
+                } sino {
+                    escribe("Hace mucho viento");
+                };
+            } sino {
+                escribe("Hace mucho calor");
+            };
+        } sino_si(humedad < 0.7){
+            escribe("Tal vez llueva");
+        } sino {
+            escribe("Definitivamente va a llover");
+        };
+    } sino_si(hora < 18){ /* tarde */
+        escribe("Es de tarde");
+    } sino { /* noche */
+        escribe("Es de noche");
+    };
+
+    escribe("FIN");
+} fin

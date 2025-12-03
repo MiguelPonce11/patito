@@ -1,0 +1,23 @@
+programa valido;
+vars a, b, res: entero;
+inicio {
+    a = 5 * 10;
+    b = 30;
+    res = a + b;
+    si(res * 4 > a){
+        escribe("SI");
+    };
+    escribe("Resultado: ", res);
+    escribe(5 * 10 * 4);
+    a = 1;
+    mientras(a < 10) haz {
+        escribe("A:", a);
+        a = a + 1;
+    };
+    escribe("ciclo terminado");
+    si(a < 10){
+        escribe("A menor que 10");
+    } sino {
+        escribe("A mayor o igual que 10");
+    };
+} fin

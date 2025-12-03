@@ -1,0 +1,40 @@
+programa condicionales;
+vars a, b: entero;
+inicio {
+    a = 8;
+    b = 5;
+    si (a > b) {
+        escribe("A MAYOR QUE B");
+    } sino {
+        escribe("B MAYOR QUE A");
+    };
+
+    a = 5;
+    si (a == b){
+        escribe("A ES IGUAL A B");
+    };
+
+    a = 20;
+
+    si(a < 3){
+        escribe("A MENOR QUE 3");
+    } sino_si(a < 5) {
+        escribe("A MENOR QUE 5");
+    } sino_si(a >= 5){
+        escribe("A MAYOR O IGUAL QUE 5");
+    };
+
+    si(a < 10){
+        si(a < 5){
+            escribe("A MENOR QUE 5");
+        } sino_si(a < 8) {
+            escribe("A MENOR QUE 8");
+        } sino {
+            escribe("A MENOR QUE 10");
+        };
+    } sino {
+        escribe("A MAYOR O IGUAL QUE 10");
+    };
+
+    escribe("FIN");
+} fin

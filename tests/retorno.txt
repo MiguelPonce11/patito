@@ -1,0 +1,10 @@
+programa retorno;
+vars res: entero;
+entero suma(a: entero, b: entero) {
+    return a + b;
+};   
+inicio {
+    escribe("--- TEST RETORNO ---");
+    res = suma(5, 3) + 10;
+    escribe("Resultado: ", res);
+} fin

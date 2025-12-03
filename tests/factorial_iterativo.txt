@@ -1,0 +1,25 @@
+programa calculo_factorial;
+vars
+    num : entero;
+    res_it : entero;
+
+entero factorial_iterativo(n : entero) vars
+    acum : entero;
+{
+    acum = 1;
+    mientras (n > 0) haz {
+        acum = acum * n;
+        n = n - 1;
+    };
+    return (acum);
+};
+
+inicio
+{
+    escribe("--- TEST FACTORIAL ---");
+    num = 5;
+
+    res_it = factorial_iterativo(num);
+    escribe("Factorial Iterativo de 5 es:", res_it);
+}
+fin
